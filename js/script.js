@@ -16,6 +16,10 @@ function getComputerChoice() {
 // Call getComputerChoice()
 getComputerChoice();
 // Define a function getPlayerChoice() that creates a variable playerChoice with initial input value from prompt function reading: "Enter either: 'rock', 'paper', or 'scissors'"
+// -I also added the toLowerCase method to make the user value 'case insensitive'
+function getPlayerChoice() {
+    let playerChoice = prompt("Please enter your choice: 'rock','paper', or 'scissors'.").toLowerCase();
+}
 //   -if value is not equal to either 'rock' or 'paper' or 'scissors', re-prompt user for correct input value
 //
 // if computerChoice is equal to playerChoice
