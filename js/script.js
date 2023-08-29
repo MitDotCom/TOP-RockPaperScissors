@@ -9,8 +9,12 @@ function play() {
     getPlayerChoice();
 }
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
-
+function getComputerChoice() {
+    let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
+    console.log(computerChoice);
+}
 // Call getComputerChoice()
+getComputerChoice();
 // Define a function getPlayerChoice() that creates a variable playerChoice with initial input value from prompt function reading: "Enter either: 'rock', 'paper', or 'scissors'"
 //   -if value is not equal to either 'rock' or 'paper' or 'scissors', re-prompt user for correct input value
 //
