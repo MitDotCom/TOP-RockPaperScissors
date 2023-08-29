@@ -2,9 +2,14 @@
 
 // Create an array 'RPS' containing strings: "rock","paper","scissors"
 const RPS = ['rock','paper','scissors']
-//
+
 // Define a function play() containing getComputerChoice() function and get playerChoice() functions
+function play() {
+    getComputerChoice();
+    getPlayerChoice();
+}
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
+
 // Call getComputerChoice()
 // Define a function getPlayerChoice() that creates a variable playerChoice with initial input value from prompt function reading: "Enter either: 'rock', 'paper', or 'scissors'"
 //   -if value is not equal to either 'rock' or 'paper' or 'scissors', re-prompt user for correct input value
