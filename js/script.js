@@ -1,6 +1,7 @@
 //Pseudocode//
 
 // Create an array 'RPS' containing strings: "rock","paper","scissors"
+const RPS = ['rock','paper','scissors']
 //
 // Define a function play() containing getComputerChoice() function and get playerChoice() functions
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
