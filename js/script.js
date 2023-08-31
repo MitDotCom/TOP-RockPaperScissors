@@ -7,6 +7,7 @@ const RPS = ['rock','paper','scissors']
 function play() {
     getComputerChoice();
     getPlayerChoice();
+    calcWinner();
 }
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
 function getComputerChoice() {
@@ -28,8 +29,9 @@ function getPlayerChoice() {
 }
 // Call getPlayerChoice()
 getPlayerChoice();
-//  
+// Define function calcWinner() that uses conditional statements to determine the winner of the round
 // if computerChoice is equal to playerChoice
+if computerChoice
 //   -print "It's a tie"
 //   -break
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
