@@ -80,6 +80,8 @@ function calcWinner();
         }
 //   -break
         break;
+// Call calcWinner function()
+calcWinner();
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 //   -while again is not equal to either 'y' or 'no'
 //     -prompt user with same text prompt and update 'again' variable with the users input
