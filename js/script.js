@@ -22,7 +22,9 @@ function getPlayerChoice() {
 //   -if value is not equal to either 'rock' or 'paper' or 'scissors', re-prompt user for correct input value
     while (!(playerChoice in RPS)) {
         playerChoice = prompt("That is not a valid choice. Please enter your choice: 'rock','paper', or 'scissors'.").toLowerCase();
-        console.log(`Great. You entered: ${playerChoice}`);
+        console.log(`Nope. You entered: ${playerChoice}`);
+        
+    return playerChoice;
     }
 }
 // Call getPlayerChoice()
