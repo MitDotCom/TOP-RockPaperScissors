@@ -19,7 +19,7 @@ getComputerChoice();
 function getPlayerChoice() {
     let playerChoice = prompt("Please enter your choice: 'rock','paper', or 'scissors'.").toLowerCase();
 //   -if value is not equal to either 'rock' or 'paper' or 'scissors', re-prompt user for correct input value
-    while (!(playerChoice in RPS)) {
+    while (!(RPS.includes(playerChoice))) {
         playerChoice = prompt("That is not a valid choice. Please enter your choice: 'rock','paper', or 'scissors'.").toLowerCase();
         console.log(`You entered: ${playerChoice}`);
 
