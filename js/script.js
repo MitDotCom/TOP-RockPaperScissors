@@ -11,7 +11,6 @@ function play() {
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
 function getComputerChoice() {
     let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
-    console.log(computerChoice);
 }
 // Call getComputerChoice()
 getComputerChoice();
@@ -24,6 +23,8 @@ function getPlayerChoice() {
         playerChoice = prompt("That is not a valid choice. Please enter your choice: 'rock','paper', or 'scissors'.").toLowerCase();
     }
 }
+// Call getPlayerChoice()
+getPlayerChoice();
 //  
 // if computerChoice is equal to playerChoice
 //   -print "It's a tie"
