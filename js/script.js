@@ -15,7 +15,7 @@ function getComputerChoice() {
     return computerChoice;
 }
 // Call getComputerChoice()
-getComputerChoice();
+const computerChoice = getComputerChoice();
 // Define a function getPlayerChoice() that creates a variable playerChoice with initial input value from prompt function reading: "Enter either: 'rock', 'paper', or 'scissors'"
 // -I also added the toLowerCase method to make the user value 'case insensitive'
 function getPlayerChoice() {
@@ -29,7 +29,7 @@ function getPlayerChoice() {
     }
 }
 // Call getPlayerChoice()
-getPlayerChoice();
+const playerChoice = getPlayerChoice();
 // Define function calcWinner() that uses conditional statements to determine the winner of the round
 function calcWinner() {
 // if computerChoice is equal to playerChoice
