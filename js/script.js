@@ -66,7 +66,12 @@ function calcWinner() {
     else if ((playerChoice === 'scissors') && (computerChoice === 'paper')) {
 //   -print "Player wins"
         console.log("Player wins");
-        } 
+        }
+    else {
+        console.log("Error");
+        console.log(`playerChoice = ${playerChoice}`);
+        console.log(`computerChoice = ${computerChoice}`);
+    }
     }
 // Call calcWinner function()
 calcWinner();
