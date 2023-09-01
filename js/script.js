@@ -30,7 +30,7 @@ function getPlayerChoice() {
 // Call getPlayerChoice()
 getPlayerChoice();
 // Define function calcWinner() that uses conditional statements to determine the winner of the round
-function calcWinner();
+function calcWinner() {
 // if computerChoice is equal to playerChoice
     if computerChoice === playerChoice {
 //   -print "It's a tie"
@@ -80,6 +80,7 @@ function calcWinner();
         }
 //   -break
         break;
+    }
 // Call calcWinner function()
 calcWinner();
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
