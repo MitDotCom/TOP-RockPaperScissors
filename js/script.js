@@ -33,7 +33,7 @@ getPlayerChoice();
 // Define function calcWinner() that uses conditional statements to determine the winner of the round
 function calcWinner() {
 // if computerChoice is equal to playerChoice
-    if computerChoice === playerChoice {
+    if (computerChoice === playerChoice) {
 //   -print "It's a tie"
         console.log("It's a tie");
     }
