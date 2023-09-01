@@ -12,6 +12,7 @@ function play() {
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
 function getComputerChoice() {
     let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
+    return computerChoice;
 }
 // Call getComputerChoice()
 getComputerChoice();
