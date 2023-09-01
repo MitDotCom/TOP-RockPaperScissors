@@ -46,33 +46,33 @@ function calcWinner() {
     else if ((playerChoice === 'rock') && (computerChoice === 'scissors')) {
     //   -print "Player wins"
         console.log("Player wins");
-        }
+    }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'paper') && (computerChoice === 'rock')) {
     //   -print "Player wins"
         console.log("Player wins");
-        }
+    }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'paper') && (computerChoice === 'scissors')) {
 //   -print "Computer wins"
         console.log("Computer wins");
-        }
+    }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'scissors') && (computerChoice === 'rock')) {
 //   -print "Computer wins"
         console.log("Computer wins");
-        }
+    }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'scissors') && (computerChoice === 'paper')) {
 //   -print "Player wins"
         console.log("Player wins");
-        }
+    }
     else {
         console.log("Error");
         console.log(`playerChoice = ${playerChoice}`);
         console.log(`computerChoice = ${computerChoice}`);
     }
-    }
+}
 // Call calcWinner function()
 calcWinner();
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
