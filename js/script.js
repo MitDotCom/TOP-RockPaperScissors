@@ -24,9 +24,8 @@ function getPlayerChoice() {
     while (!(RPS.includes(playerChoice))) {
         playerChoice = prompt("That is not a valid choice. Please enter your choice: 'rock','paper', or 'scissors'.").toLowerCase();
         console.log(`You entered: ${playerChoice}`);
-
-    return playerChoice;
     }
+    return playerChoice;
 }
 // Call getPlayerChoice()
 const playerChoice = getPlayerChoice();
