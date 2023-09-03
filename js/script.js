@@ -38,7 +38,7 @@ function calcWinner() {
 //   -print "It's a tie"
         console.log(`It's a tie. You both chose ${playerChoice}.`);
         rounds++;
-        console.log(`Round: ${rounds}`)
+        console.log(`Round: ${rounds}`);
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'rock') && (computerChoice === 'paper')) {
@@ -46,9 +46,9 @@ function calcWinner() {
         console.log("Computer wins. Paper beats rock.");
         rounds++;
         computerWins++;
-        console.log(`Computer wins: ${computerWins}`)
-        console.log(`Player wins: ${playerWins}`)
-        console.log(`Round: ${rounds}`)
+        console.log(`Computer wins: ${computerWins}`);
+        console.log(`Player wins: ${playerWins}`);
+        console.log(`Round: ${rounds}`);
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'rock') && (computerChoice === 'scissors')) {
@@ -56,9 +56,9 @@ function calcWinner() {
         console.log("Player wins. Rock beats scissors.");
         rounds++;
         playerWins++;
-        console.log(`Computer wins: ${computerWins}`)
-        console.log(`Player wins: ${playerWins}`)
-        console.log(`Round: ${rounds}`)
+        console.log(`Computer wins: ${computerWins}`);
+        console.log(`Player wins: ${playerWins}`);
+        console.log(`Round: ${rounds}`);
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'paper') && (computerChoice === 'rock')) {
@@ -66,9 +66,9 @@ function calcWinner() {
         console.log("Player wins. Paper beats rock.");
         rounds++;
         playerWins++;
-        console.log(`Computer wins: ${computerWins}`)
-        console.log(`Player wins: ${playerWins}`)
-        console.log(`Round: ${rounds}`)
+        console.log(`Computer wins: ${computerWins}`);
+        console.log(`Player wins: ${playerWins}`);
+        console.log(`Round: ${rounds}`);
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'paper') && (computerChoice === 'scissors')) {
@@ -76,9 +76,9 @@ function calcWinner() {
         console.log("Computer wins. Scissors beats paper.");
         rounds++;
         computerWins++;
-        console.log(`Computer wins: ${computerWins}`)
-        console.log(`Player wins: ${playerWins}`)
-        console.log(`Round: ${rounds}`)
+        console.log(`Computer wins: ${computerWins}`);
+        console.log(`Player wins: ${playerWins}`);
+        console.log(`Round: ${rounds}`);
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'scissors') && (computerChoice === 'rock')) {
@@ -86,9 +86,9 @@ function calcWinner() {
         console.log("Computer wins. Rock beats scissors.");
         rounds++;
         computerWins++;
-        console.log(`Computer wins: ${computerWins}`)
-        console.log(`Player wins: ${playerWins}`)
-        console.log(`Round: ${rounds}`)
+        console.log(`Computer wins: ${computerWins}`);
+        console.log(`Player wins: ${playerWins}`);
+        console.log(`Round: ${rounds}`);
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'scissors') && (computerChoice === 'paper')) {
@@ -96,23 +96,28 @@ function calcWinner() {
         console.log("Player wins. Scissors beats paper.");
         rounds++;
         playerWins++;
-        console.log(`Computer wins: ${computerWins}`)
-        console.log(`Player wins: ${playerWins}`)
-        console.log(`Round: ${rounds}`)
+        console.log(`Computer wins: ${computerWins}`);
+        console.log(`Player wins: ${playerWins}`);
+        console.log(`Round: ${rounds}`);
     }
     else {
         console.log("Error");
         console.log(`playerChoice = ${playerChoice}`);
         console.log(`computerChoice = ${computerChoice}`);
     }
+    wins = {
+        computerWins,
+        playerWins
+    };
     return wins;
+    
 }
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
-    const computerChoice = getComputerChoice();
-    const playerChoice = getPlayerChoice();
+    computerChoice = getComputerChoice();
+    playerChoice = getPlayerChoice();
 // NEED TO FIX 'wins' variable to work either as object (line 41 or function call (here))
-    const wins = calcWinner();
+    wins = calcWinner();
     
     return {
         computerChoice,
@@ -141,7 +146,7 @@ function playAgain() {
 }
 
 // Call playGame function()
-computerChoice,playerChoice,wins = playGame();
+[computerChoice,playerChoice,wins] = playGame();
 
 //     -call playAgain() function
 again = playAgain();
