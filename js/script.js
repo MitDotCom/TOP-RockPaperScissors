@@ -1,5 +1,9 @@
 //Pseudocode//
 
+// POTENTIAL IMPROVEMENT/FIX
+// Change console.log() calls at the end of conditional blocks in the calcWinner() function
+//  to a function that calculates and console.logs all the 'final statements'
+
 // Create an array 'RPS' containing strings: "rock","paper","scissors"
 const RPS = ['rock','paper','scissors']
 
@@ -54,7 +58,9 @@ const wins = {
 //   -print "Computer wins"        
         console.log("Computer wins. Paper beats rock.");
         rounds++;
-        computerWins 
+        computerWins++;
+        console.log(`Computer wins: ${computerWins}`)
+        console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
@@ -62,6 +68,8 @@ const wins = {
     //   -print "Player wins"
         console.log("Player wins. Rock beats scissors.");
         rounds++;
+        console.log(`Computer wins: ${computerWins}`)
+        console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
@@ -69,6 +77,8 @@ const wins = {
     //   -print "Player wins"
         console.log("Player wins. Paper beats rock.");
         rounds++;
+        console.log(`Computer wins: ${computerWins}`)
+        console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
@@ -76,6 +86,8 @@ const wins = {
 //   -print "Computer wins"
         console.log("Computer wins. Scissors beats paper.");
         rounds++;
+        console.log(`Computer wins: ${computerWins}`)
+        console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
@@ -83,6 +95,8 @@ const wins = {
 //   -print "Computer wins"
         console.log("Computer wins. Rock beats scissors.");
         rounds++;
+        console.log(`Computer wins: ${computerWins}`)
+        console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
@@ -90,6 +104,8 @@ const wins = {
 //   -print "Player wins"
         console.log("Player wins. Scissors beats paper.");
         rounds++;
+        console.log(`Computer wins: ${computerWins}`)
+        console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
     }
     else {
