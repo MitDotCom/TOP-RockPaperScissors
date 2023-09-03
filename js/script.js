@@ -11,6 +11,12 @@ function play() {
     const computerChoice =getComputerChoice();
     const playerChoice = getPlayerChoice();
     const wins = calcWinner();
+
+    return {
+        computerChoice,
+        playerChoice,
+        wins
+    };
 }
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
 function getComputerChoice() {
