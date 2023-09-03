@@ -32,8 +32,8 @@ function getPlayerChoice() {
 function calcWinner() {
 // Add variable wins of type 'Object' with two values: 'computerWins' and 'playerWins' with corresponding values
 const wins = {
-    computerWins = 0,
-    playerWins = 0
+    computerWins: 0,
+    playerWins: 0
 };
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
