@@ -117,12 +117,12 @@ function playGame() {
 // SOLUTION: Split 'wins' into both 'computerWins' and 'playerWins' variables   
     [computerWins,playerWins] = calcWinner();
     
-    return {
+    return [
         computerChoice,
         playerChoice,
         computerWins,
         playerWins
-   };
+    ];
 }
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
@@ -145,7 +145,7 @@ function playAgain() {
 }
 
 // Call playGame function()
-[computerChoice,playerChoice,wins] = playGame();
+[computerChoice,playerChoice,computerWins,playerWins] = playGame();
 
 //     -call playAgain() function
 again = playAgain();
