@@ -109,19 +109,16 @@ function calcWinner() {
 }
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
-// ATTEMPTED:    const computerChoice = getComputerChoice();
-    getComputerChoice();
-// ATTEMPTED:    const playerChoice = getPlayerChoice();
-    getPlayerChoice();
+    const computerChoice = getComputerChoice();
+    const playerChoice = getPlayerChoice();
 // NEED TO FIX 'wins' variable to work either as object (line 41 or function call (here))
-// ATTEMPTED:    const wins = calcWinner();
-    calcWinner();
-// !! Attempting to comment out return statement section here to 122 for playGame() function call to work properly
-//    return {
-//       computerChoice,
-//        playerChoice,
-//        wins
-//    };
+    const wins = calcWinner();
+    
+    return {
+        computerChoice,
+        playerChoice,
+        wins
+   };
 }
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
@@ -144,8 +141,7 @@ function playAgain() {
 }
 
 // Call playGame function()
-// ATTEMPTED: computerChoice,playerChoice,wins = playGame();
-playGame();
+computerChoice,playerChoice,wins = playGame();
 
 //     -call playAgain() function
 again = playAgain();
