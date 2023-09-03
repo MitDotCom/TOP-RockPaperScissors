@@ -104,10 +104,10 @@ function calcWinner() {
         console.log(`playerChoice = ${playerChoice}`);
         console.log(`computerChoice = ${computerChoice}`);
     }
-    return {
+    return [
         computerWins,
         playerWins
-    } ;
+    ] ;
 }
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
