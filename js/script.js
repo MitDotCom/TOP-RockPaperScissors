@@ -12,7 +12,7 @@ let rounds = 0;
 
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
-    const computerChoice =getComputerChoice();
+    const computerChoice = getComputerChoice();
     const playerChoice = getPlayerChoice();
 // NEED TO FIX 'wins' variable to work either as object (line 41 or function call (here))
     const wins = calcWinner();
