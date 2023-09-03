@@ -29,10 +29,9 @@ function getPlayerChoice() {
 // Define function calcWinner() that uses conditional statements to determine the winner of the round
 function calcWinner() {
 // Add variable wins of type 'Object' with two values: 'computerWins' and 'playerWins' with corresponding values
-    const wins = {
-        computerWins: 0,
-        playerWins: 0
-    };
+// Fix instead to be two variables
+    const computerWins = 0;
+    const playerWins = 0;
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
@@ -105,24 +104,24 @@ function calcWinner() {
         console.log(`playerChoice = ${playerChoice}`);
         console.log(`computerChoice = ${computerChoice}`);
     }
-    wins = {
+    return {
         computerWins,
         playerWins
-    };
-    return wins;
-    
+    } ;
 }
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
     computerChoice = getComputerChoice();
     playerChoice = getPlayerChoice();
 // NEED TO FIX 'wins' variable to work either as object (line 108 or function call (here))
-    wins = calcWinner();
+// SOLUTION: Split 'wins' into both 'computerWins' and 'playerWins' variables   
+    [computerWins,playerWins] = calcWinner();
     
     return {
         computerChoice,
         playerChoice,
-        wins
+        computerWins,
+        playerWins
    };
 }
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
