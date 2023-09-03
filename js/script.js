@@ -6,7 +6,7 @@ const RPS = ['rock','paper','scissors']
 // Create a variable 'rounds' that keeps track of how many rounds have been played.
 let rounds = 0;
 
-// Define a function play() containing getComputerChoice() function and get playerChoice() functions
+// Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
     const computerChoice =getComputerChoice();
     const playerChoice = getPlayerChoice();
@@ -46,42 +46,49 @@ const wins = {
 //   -print "It's a tie"
         console.log(`It's a tie. You both chose ${playerChoice}.`);
         rounds++;
+        console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'rock') && (computerChoice === 'paper')) {
 //   -print "Computer wins"        
         console.log("Computer wins. Paper beats rock.");
         rounds++;
+        console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'rock') && (computerChoice === 'scissors')) {
     //   -print "Player wins"
         console.log("Player wins. Rock beats scissors.");
         rounds++;
+        console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'paper') && (computerChoice === 'rock')) {
     //   -print "Player wins"
         console.log("Player wins. Paper beats rock.");
         rounds++;
+        console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'paper') && (computerChoice === 'scissors')) {
 //   -print "Computer wins"
         console.log("Computer wins. Scissors beats paper.");
         rounds++;
+        console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'scissors') && (computerChoice === 'rock')) {
 //   -print "Computer wins"
         console.log("Computer wins. Rock beats scissors.");
         rounds++;
+        console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'scissors') && (computerChoice === 'paper')) {
 //   -print "Player wins"
         console.log("Player wins. Scissors beats paper.");
         rounds++;
+        console.log(`Round: ${rounds}`)
     }
     else {
         console.log("Error");
@@ -109,7 +116,7 @@ function playAgain() {
     return again;
 }
 
-// Call play function()
+// Call playGame function()
 playGame();
 
 //     -call playAgain() function
