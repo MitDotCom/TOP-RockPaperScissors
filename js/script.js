@@ -68,6 +68,7 @@ const wins = {
     //   -print "Player wins"
         console.log("Player wins. Rock beats scissors.");
         rounds++;
+        playerWins++;
         console.log(`Computer wins: ${computerWins}`)
         console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
@@ -77,6 +78,7 @@ const wins = {
     //   -print "Player wins"
         console.log("Player wins. Paper beats rock.");
         rounds++;
+        playerWins++;
         console.log(`Computer wins: ${computerWins}`)
         console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
@@ -86,6 +88,7 @@ const wins = {
 //   -print "Computer wins"
         console.log("Computer wins. Scissors beats paper.");
         rounds++;
+        computerWins++;
         console.log(`Computer wins: ${computerWins}`)
         console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
@@ -95,6 +98,7 @@ const wins = {
 //   -print "Computer wins"
         console.log("Computer wins. Rock beats scissors.");
         rounds++;
+        computerWins++;
         console.log(`Computer wins: ${computerWins}`)
         console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
@@ -104,6 +108,7 @@ const wins = {
 //   -print "Player wins"
         console.log("Player wins. Scissors beats paper.");
         rounds++;
+        playerWins++;
         console.log(`Computer wins: ${computerWins}`)
         console.log(`Player wins: ${playerWins}`)
         console.log(`Round: ${rounds}`)
