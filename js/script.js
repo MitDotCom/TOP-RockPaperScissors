@@ -77,18 +77,21 @@ calcWinner();
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
     let again = prompt("Do you want to play again? Type 'yes' or 'no'");
-//   -while again is not equal to either 'y' or 'no'
+//   -while again is not equal to either 'yes' or 'no'
     while (!(again === "yes") || (again === "no")) {
 //     -prompt user with same text prompt and update 'again' variable with the users input
     again = prompt("Incorrect response. Do you want to play again? Type 'yes' or 'no'");
     }
-//   -if 'again' is equal to 'y'
+//   -if 'again' is equal to 'yes'
     if (!(again === "yes")) {
         playAgain();
+    }
+//   else
+    else {
+//     -print "Thanks for playing"
+        console.log("Thanks for playing.")
     }
     return again;
 }
 //     -call playAgain() function
 again = playAgain();
-//   else
-//     -print "Thanks for playing"
