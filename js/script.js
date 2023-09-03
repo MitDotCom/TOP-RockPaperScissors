@@ -30,8 +30,8 @@ function getPlayerChoice() {
 function calcWinner() {
 // Add variable wins of type 'Object' with two values: 'computerWins' and 'playerWins' with corresponding values
 // Fix instead to be two variables
-    const computerWins = 0;
-    const playerWins = 0;
+    let computerWins = 0;
+    let playerWins = 0;
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
@@ -107,7 +107,7 @@ function calcWinner() {
     return [
         computerWins,
         playerWins
-    ] ;
+    ];
 }
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
