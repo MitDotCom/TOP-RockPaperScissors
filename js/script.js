@@ -83,6 +83,7 @@ function playAgain() {
 //   -if 'again' is equal to 'y'
     return again;
 }
-//     -call play() function
+//     -call playAgain() function
+again = playAgain();
 //   else
 //     -print "Thanks for playing"
