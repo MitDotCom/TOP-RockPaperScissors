@@ -8,9 +8,9 @@ let rounds = 0;
 
 // Define a function play() containing getComputerChoice() function and get playerChoice() functions
 function play() {
-    getComputerChoice();
-    getPlayerChoice();
-    calcWinner();
+    const computerChoice =getComputerChoice();
+    const playerChoice = getPlayerChoice();
+    const wins = calcWinner();
 }
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
 function getComputerChoice() {
@@ -34,6 +34,8 @@ function getPlayerChoice() {
 const playerChoice = getPlayerChoice();
 // Define function calcWinner() that uses conditional statements to determine the winner of the round
 function calcWinner() {
+// Add variable wins of type 'Object' with two values: 'computerWins' and 'playerWins' with corresponding values
+!!!!!!!!!!!!!! // CODE HERE
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
