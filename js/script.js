@@ -37,7 +37,7 @@ function calcWinner() {
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
-        console.log(`It's a tie. You both chose ${playerChoice}`);
+        console.log(`It's a tie. You both chose ${playerChoice}.`);
         rounds++;
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
