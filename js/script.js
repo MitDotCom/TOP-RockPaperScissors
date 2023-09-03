@@ -3,6 +3,7 @@
 // POTENTIAL IMPROVEMENT/FIX
 // Change console.log() calls at the end of conditional blocks in the calcWinner() function
 //  to a function that calculates and console.logs all the 'final statements'
+// Add alert function to each end of round because it's hard to see the results in the console with the alert popup open
 
 // Create an array 'RPS' containing strings: "rock","paper","scissors"
 const RPS = ['rock','paper','scissors']
@@ -18,6 +19,7 @@ function getComputerChoice() {
 // Define a function getPlayerChoice() that creates a variable playerChoice with initial input value from prompt function reading: "Enter either: 'rock', 'paper', or 'scissors'"
 // -I also added the toLowerCase method to make the user value 'case insensitive'
 function getPlayerChoice() {
+    alert(`Round: ${rounds}!`);
     let playerChoice = prompt("Please enter your choice: 'rock','paper', or 'scissors'.").toLowerCase();
 //   -if value is not equal to either 'rock' or 'paper' or 'scissors', re-prompt user for correct input value
     while (!(RPS.includes(playerChoice))) {
@@ -117,18 +119,21 @@ function calcWinner() {
 }
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
-    computerChoice = getComputerChoice();
-    playerChoice = getPlayerChoice();
+    // Use for loop
+    for (let i = 0; i < 6; i++) {
+        computerChoice = getComputerChoice();
+        playerChoice = getPlayerChoice();
 // NEED TO FIX 'wins' variable to work either as object (line 108 or function call (here))
 // SOLUTION: Split 'wins' into both 'computerWins' and 'playerWins' variables   
-    [computerWins,playerWins] = calcWinner();
+        [computerWins,playerWins] = calcWinner();
     
-    return [
-        computerChoice,
-        playerChoice,
-        computerWins,
-        playerWins
-    ];
+        return [
+            computerChoice,
+            playerChoice,
+            computerWins,
+            playerWins
+        ];
+    }
 }
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
@@ -136,11 +141,11 @@ function playAgain() {
 //   -while again is not equal to either 'yes' or 'no'
     while (!(again === "yes") || (again === "no")) {
 //     -prompt user with same text prompt and update 'again' variable with the users input
-    again = prompt("Incorrect response. Do you want to play again? Type 'yes' or 'no'");
+    again = prompt("Incorrect response. Do you want to play again? Type 'yes' or 'no'").toLowerCase();
     }
 //   -if 'again' is equal to 'yes'
     if (!(again === "yes")) {
-        playAgain();
+        playGame();
     }
 //   else
     else {
@@ -151,7 +156,6 @@ function playAgain() {
 }
 
 // Call playGame function()
-[computerChoice,playerChoice,computerWins,playerWins] = playGame();
-
-//     -call playAgain() function
+playGame();
+//Call playAgain() function
 again = playAgain();
