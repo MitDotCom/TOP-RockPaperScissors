@@ -10,6 +10,7 @@ let rounds = 0;
 function playGame() {
     const computerChoice =getComputerChoice();
     const playerChoice = getPlayerChoice();
+// NEED TO FIX 'wins' variable to work either as object (line 41 or function call (here))
     const wins = calcWinner();
 
     return {
@@ -53,6 +54,7 @@ const wins = {
 //   -print "Computer wins"        
         console.log("Computer wins. Paper beats rock.");
         rounds++;
+        computerWins 
         console.log(`Round: ${rounds}`)
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
@@ -95,6 +97,7 @@ const wins = {
         console.log(`playerChoice = ${playerChoice}`);
         console.log(`computerChoice = ${computerChoice}`);
     }
+    return wins;
 }
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
