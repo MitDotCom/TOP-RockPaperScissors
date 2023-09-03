@@ -78,9 +78,14 @@ calcWinner();
 function playAgain() {
     let again = prompt("Do you want to play again? Type 'yes' or 'no'");
 //   -while again is not equal to either 'y' or 'no'
-
+    while (!(again === "yes") || (again === "no")) {
 //     -prompt user with same text prompt and update 'again' variable with the users input
+    again = prompt("Incorrect response. Do you want to play again? Type 'yes' or 'no'");
+    }
 //   -if 'again' is equal to 'y'
+    if (!(again === "yes")) {
+        playAgain();
+    }
     return again;
 }
 //     -call playAgain() function
