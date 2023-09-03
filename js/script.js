@@ -3,6 +3,9 @@
 // Create an array 'RPS' containing strings: "rock","paper","scissors"
 const RPS = ['rock','paper','scissors']
 
+// Create a variable 'rounds' that keeps track of how many rounds have been played.
+let rounds = 0;
+
 // Define a function play() containing getComputerChoice() function and get playerChoice() functions
 function play() {
     getComputerChoice();
