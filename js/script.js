@@ -10,19 +10,6 @@ const RPS = ['rock','paper','scissors']
 // Create a variable 'rounds' that keeps track of how many rounds have been played.
 let rounds = 0;
 
-// Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
-function playGame() {
-    const computerChoice = getComputerChoice();
-    const playerChoice = getPlayerChoice();
-// NEED TO FIX 'wins' variable to work either as object (line 41 or function call (here))
-    const wins = calcWinner();
-
-    return {
-        computerChoice,
-        playerChoice,
-        wins
-    };
-}
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
 function getComputerChoice() {
     let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
@@ -119,6 +106,19 @@ function calcWinner() {
         console.log(`computerChoice = ${computerChoice}`);
     }
     return wins;
+}
+// Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
+function playGame() {
+    const computerChoice = getComputerChoice();
+    const playerChoice = getPlayerChoice();
+// NEED TO FIX 'wins' variable to work either as object (line 41 or function call (here))
+    const wins = calcWinner();
+
+    return {
+        computerChoice,
+        playerChoice,
+        wins
+    };
 }
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
