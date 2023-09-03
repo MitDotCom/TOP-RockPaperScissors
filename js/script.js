@@ -39,32 +39,32 @@ function calcWinner() {
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'rock') && (computerChoice === 'paper')) {
 //   -print "Computer wins"        
-        console.log("Computer wins");
+        console.log("Computer wins. Paper beats rock.");
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'rock') && (computerChoice === 'scissors')) {
     //   -print "Player wins"
-        console.log("Player wins");
+        console.log("Player wins. Rock beats scissors.");
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'paper') && (computerChoice === 'rock')) {
     //   -print "Player wins"
-        console.log("Player wins");
+        console.log("Player wins. Paper beats rock.");
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'paper') && (computerChoice === 'scissors')) {
 //   -print "Computer wins"
-        console.log("Computer wins");
+        console.log("Computer wins. Scissors beats paper.");
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'scissors') && (computerChoice === 'rock')) {
 //   -print "Computer wins"
-        console.log("Computer wins");
+        console.log("Computer wins. Rock beats scissors.");
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'scissors') && (computerChoice === 'paper')) {
 //   -print "Player wins"
-        console.log("Player wins");
+        console.log("Player wins. Scissors beats paper.");
     }
     else {
         console.log("Error");
