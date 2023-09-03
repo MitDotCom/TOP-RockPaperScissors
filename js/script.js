@@ -37,37 +37,44 @@ function calcWinner() {
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
-        console.log(`It's a tie. You both chose ${playerChoice}`); 
+        console.log(`It's a tie. You both chose ${playerChoice}`);
+        rounds++;
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'rock') && (computerChoice === 'paper')) {
 //   -print "Computer wins"        
         console.log("Computer wins. Paper beats rock.");
+        rounds++;
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'rock') && (computerChoice === 'scissors')) {
     //   -print "Player wins"
         console.log("Player wins. Rock beats scissors.");
+        rounds++;
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'paper') && (computerChoice === 'rock')) {
     //   -print "Player wins"
         console.log("Player wins. Paper beats rock.");
+        rounds++;
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'paper') && (computerChoice === 'scissors')) {
 //   -print "Computer wins"
         console.log("Computer wins. Scissors beats paper.");
+        rounds++;
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'scissors') && (computerChoice === 'rock')) {
 //   -print "Computer wins"
         console.log("Computer wins. Rock beats scissors.");
+        rounds++;
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'scissors') && (computerChoice === 'paper')) {
 //   -print "Player wins"
         console.log("Player wins. Scissors beats paper.");
+        rounds++;
     }
     else {
         console.log("Error");
