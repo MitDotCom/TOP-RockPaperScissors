@@ -42,10 +42,10 @@ function getPlayerChoice() {
 // Define function calcWinner() that uses conditional statements to determine the winner of the round
 function calcWinner() {
 // Add variable wins of type 'Object' with two values: 'computerWins' and 'playerWins' with corresponding values
-const wins = {
-    computerWins: 0,
-    playerWins: 0
-};
+    const wins = {
+        computerWins: 0,
+        playerWins: 0
+    };
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
