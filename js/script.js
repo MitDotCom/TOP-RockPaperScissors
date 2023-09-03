@@ -116,7 +116,7 @@ function calcWinner() {
 function playGame() {
     computerChoice = getComputerChoice();
     playerChoice = getPlayerChoice();
-// NEED TO FIX 'wins' variable to work either as object (line 41 or function call (here))
+// NEED TO FIX 'wins' variable to work either as object (line 108 or function call (here))
     wins = calcWinner();
     
     return {
