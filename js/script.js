@@ -7,7 +7,7 @@ const RPS = ['rock','paper','scissors']
 let rounds = 0;
 
 // Define a function play() containing getComputerChoice() function and get playerChoice() functions
-function play() {
+function playGame() {
     const computerChoice =getComputerChoice();
     const playerChoice = getPlayerChoice();
     const wins = calcWinner();
@@ -110,7 +110,7 @@ function playAgain() {
 }
 
 // Call play function()
-play();
+playGame();
 
 //     -call playAgain() function
 again = playAgain();
