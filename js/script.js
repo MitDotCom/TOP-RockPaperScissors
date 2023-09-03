@@ -17,8 +17,6 @@ function getComputerChoice() {
     let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
     return computerChoice;
 }
-// Call getComputerChoice()
-const computerChoice = getComputerChoice();
 // Define a function getPlayerChoice() that creates a variable playerChoice with initial input value from prompt function reading: "Enter either: 'rock', 'paper', or 'scissors'"
 // -I also added the toLowerCase method to make the user value 'case insensitive'
 function getPlayerChoice() {
@@ -30,12 +28,13 @@ function getPlayerChoice() {
     }
     return playerChoice;
 }
-// Call getPlayerChoice()
-const playerChoice = getPlayerChoice();
 // Define function calcWinner() that uses conditional statements to determine the winner of the round
 function calcWinner() {
 // Add variable wins of type 'Object' with two values: 'computerWins' and 'playerWins' with corresponding values
-!!!!!!!!!!!!!! // CODE HERE
+const wins = {
+    computerWins = 0,
+    playerWins = 0
+};
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
@@ -84,8 +83,6 @@ function calcWinner() {
         console.log(`computerChoice = ${computerChoice}`);
     }
 }
-// Call calcWinner function()
-calcWinner();
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
     let again = prompt("Do you want to play again? Type 'yes' or 'no'");
@@ -105,5 +102,9 @@ function playAgain() {
     }
     return again;
 }
+
+// Call play function()
+play();
+
 //     -call playAgain() function
 again = playAgain();
