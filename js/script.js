@@ -133,13 +133,6 @@ function playGame() {
 // NEED TO FIX 'wins' variable to work either as object (line 108 or function call (here))
 // SOLUTION: Split 'wins' into both 'computerWins' and 'playerWins' variables   
         [computerWins,playerWins] = calcWinner();
-    
-        return [
-            computerChoice,
-            playerChoice,
-            computerWins,
-            playerWins
-        ];
     }
 }
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
@@ -151,7 +144,7 @@ function playAgain() {
     again = prompt("Incorrect response. Do you want to play again? Type 'yes' or 'no'").toLowerCase();
     }
 //   -if 'again' is equal to 'yes'
-    if (!(again === "yes")) {
+    if (again === "yes") {
         playGame();
     }
 //   else
