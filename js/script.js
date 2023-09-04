@@ -11,11 +11,17 @@ const RPS = ['rock','paper','scissors']
 // Create a variable 'rounds' that keeps track of how many rounds have been played.
 let rounds = 1;
 
+// Add variable wins of type 'Object' with two values: 'computerWins' and 'playerWins' with corresponding values
+// Fix instead to be two variables
+let computerWins = 0;
+let playerWins = 0;
+
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
 function getComputerChoice() {
     let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
     return computerChoice;
 }
+
 // Define a function getPlayerChoice() that creates a variable playerChoice with initial input value from prompt function reading: "Enter either: 'rock', 'paper', or 'scissors'"
 // -I also added the toLowerCase method to make the user value 'case insensitive'
 function getPlayerChoice() {
@@ -28,12 +34,9 @@ function getPlayerChoice() {
     }
     return playerChoice;
 }
+
 // Define function calcWinner() that uses conditional statements to determine the winner of the round
 function calcWinner() {
-// Add variable wins of type 'Object' with two values: 'computerWins' and 'playerWins' with corresponding values
-// Fix instead to be two variables
-    let computerWins = 0;
-    let playerWins = 0;
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
@@ -125,6 +128,7 @@ function calcWinner() {
         playerWins
     ];
 }
+
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
     // Use for loop
@@ -136,6 +140,7 @@ function playGame() {
         [computerWins,playerWins] = calcWinner();
     }
 }
+
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
     let again = prompt("Do you want to play again? Type 'yes' or 'no'");
@@ -162,5 +167,6 @@ function playAgain() {
 
 // Call playGame function()
 playGame();
+
 //Call playAgain() function
 [again,rounds] = playAgain();
