@@ -132,7 +132,7 @@ function calcWinner() {
 // Define a function playGame() containing getComputerChoice() function and get playerChoice() functions
 function playGame() {
     // Use for loop
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
         computerChoice = getComputerChoice();
         playerChoice = getPlayerChoice();
 // NEED TO FIX 'wins' variable to work either as object (line 108 or function call (here))
