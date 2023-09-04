@@ -148,26 +148,27 @@ function playAgain() {
     while (!(again === "yes") || (again === "no")) {
 //     -prompt user with same text prompt and update 'again' variable with the users input
         again = prompt("Incorrect response. Do you want to play again? Type 'yes' or 'no'").toLowerCase();
-//   -if 'again' is equal to 'yes'
-        if (again === "yes") {
-            rounds = 1;
-            playGame();
-        }
-//   -else if 'again' is equal to 'no'
-        else if (again === "no") {
-            console.log("Thanks for playing.");
-        }
-//   else
-        else {
-//     -print "Thanks for playing"
-            console.log("Error");
-        }
-        return [
-            again,
-            rounds
-        ];
     }
+//   -if 'again' is equal to 'yes'
+    if (again === "yes") {
+        rounds = 1;
+        playGame();
+    }
+//   -else if 'again' is equal to 'no'
+    else if (again === "no") {
+        console.log("Thanks for playing.");
+    }
+//   else
+    else {
+//     -print "Thanks for playing"
+        console.log("Error");
+    }
+    return [
+        again,
+        rounds
+    ];
 }
+
 // Call playGame function()
 playGame();
 
