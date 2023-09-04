@@ -37,13 +37,15 @@ function calcWinner() {
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
+        alert(`It's a tie. You both chose ${playerChoice}.`);
         console.log(`It's a tie. You both chose ${playerChoice}.`);
         rounds++;
         console.log(`Round: ${rounds}`);
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'rock') && (computerChoice === 'paper')) {
-//   -print "Computer wins"        
+//   -print "Computer wins"
+        alert("Computer wins. Paper beats rock.");
         rounds++;
         computerWins++;
         console.log("Computer wins. Paper beats rock.");
@@ -55,6 +57,7 @@ function calcWinner() {
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'rock') && (computerChoice === 'scissors')) {
     //   -print "Player wins"
+        alert("Player wins. Rock beats scissors.");
         rounds++;
         playerWins++;
         console.log("Player wins. Rock beats scissors.");
@@ -66,6 +69,7 @@ function calcWinner() {
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'paper') && (computerChoice === 'rock')) {
     //   -print "Player wins"
+        alert("Player wins. Paper beats rock.");
         rounds++;
         playerWins++;
         console.log("Player wins. Paper beats rock.");
@@ -77,6 +81,7 @@ function calcWinner() {
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'paper') && (computerChoice === 'scissors')) {
 //   -print "Computer wins"
+        alert("Computer wins. Scissors beats paper.");
         rounds++;
         computerWins++;
         console.log("Computer wins. Scissors beats paper.");
@@ -88,6 +93,7 @@ function calcWinner() {
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'scissors') && (computerChoice === 'rock')) {
 //   -print "Computer wins"
+        alert("Computer wins. Rock beats scissors.");
         rounds++;
         computerWins++;
         console.log("Computer wins. Rock beats scissors.");
@@ -99,6 +105,7 @@ function calcWinner() {
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'scissors') && (computerChoice === 'paper')) {
 //   -print "Player wins"
+        alert("Player wins. Scissors beats paper.");
         rounds++;
         playerWins++;
         console.log("Player wins. Scissors beats paper.");
