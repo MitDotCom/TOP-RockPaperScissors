@@ -41,6 +41,7 @@ function calcWinner() {
         console.log(`It's a tie. You both chose ${playerChoice}.`);
         rounds++;
         console.log(`Round: ${rounds}`);
+        console.log(".....................");
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'rock') && (computerChoice === 'paper')) {
@@ -49,10 +50,10 @@ function calcWinner() {
         rounds++;
         computerWins++;
         console.log("Computer wins. Paper beats rock.");
-        console.log(".....................");
         console.log(`Computer wins: ${computerWins}`);
         console.log(`Player wins: ${playerWins}`);
         console.log(`Round: ${rounds}`);
+        console.log(".....................");
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'rock') && (computerChoice === 'scissors')) {
@@ -61,10 +62,10 @@ function calcWinner() {
         rounds++;
         playerWins++;
         console.log("Player wins. Rock beats scissors.");
-        console.log(".....................");
         console.log(`Computer wins: ${computerWins}`);
         console.log(`Player wins: ${playerWins}`);
         console.log(`Round: ${rounds}`);
+        console.log(".....................");
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'paper') && (computerChoice === 'rock')) {
@@ -73,10 +74,10 @@ function calcWinner() {
         rounds++;
         playerWins++;
         console.log("Player wins. Paper beats rock.");
-        console.log(".....................");
         console.log(`Computer wins: ${computerWins}`);
         console.log(`Player wins: ${playerWins}`);
         console.log(`Round: ${rounds}`);
+        console.log(".....................");
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === 'paper') && (computerChoice === 'scissors')) {
@@ -85,10 +86,10 @@ function calcWinner() {
         rounds++;
         computerWins++;
         console.log("Computer wins. Scissors beats paper.");
-        console.log(".....................");
         console.log(`Computer wins: ${computerWins}`);
         console.log(`Player wins: ${playerWins}`);
         console.log(`Round: ${rounds}`);
+        console.log(".....................");
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === 'scissors') && (computerChoice === 'rock')) {
@@ -97,10 +98,10 @@ function calcWinner() {
         rounds++;
         computerWins++;
         console.log("Computer wins. Rock beats scissors.");
-        console.log(".....................");
         console.log(`Computer wins: ${computerWins}`);
         console.log(`Player wins: ${playerWins}`);
         console.log(`Round: ${rounds}`);
+        console.log(".....................");
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === 'scissors') && (computerChoice === 'paper')) {
@@ -109,10 +110,10 @@ function calcWinner() {
         rounds++;
         playerWins++;
         console.log("Player wins. Scissors beats paper.");
-        console.log(".....................");
         console.log(`Computer wins: ${computerWins}`);
         console.log(`Player wins: ${playerWins}`);
         console.log(`Round: ${rounds}`);
+        console.log(".....................");
     }
     else {
         console.log("Error");
