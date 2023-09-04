@@ -9,7 +9,7 @@
 const RPS = ['rock','paper','scissors']
 
 // Create a variable 'rounds' that keeps track of how many rounds have been played.
-let rounds = 0;
+let rounds = 1;
 
 // Define function getComputerChoice()  that creates a variable 'computerChoice' and assigns it a random choice string from 'RPS'
 function getComputerChoice() {
@@ -146,6 +146,7 @@ function playAgain() {
     }
 //   -if 'again' is equal to 'yes'
     if (again === "yes") {
+        rounds = 1;
         playGame();
     }
 //   else
@@ -153,10 +154,13 @@ function playAgain() {
 //     -print "Thanks for playing"
         console.log("Thanks for playing.")
     }
-    return again;
+    return [
+        again,
+        rounds
+    ];
 }
 
 // Call playGame function()
 playGame();
 //Call playAgain() function
-again = playAgain();
+[again,rounds] = playAgain();
