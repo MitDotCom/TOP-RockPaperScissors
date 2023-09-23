@@ -1,0 +1,22 @@
+body {
+    background-image: url("./rpsbg.jpg");
+    margin: 50px;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 auto;
+    gap: 50px;
+}
+
+button {
+    font-size: 30px;
+}
