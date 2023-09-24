@@ -13,11 +13,15 @@ const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
 
 const playAgain = document.querySelector('.playAgain');
-const question = document.querySelector('question');
+const question = document.querySelector('.question');
 const yes = document.querySelector('.yes');
 const no = document.querySelector('.no');
 
 // Make playAgain invisible at the start of the page
+playAgain.style.visibility = 'hidden';
+
+// Create an array 'yesNo' for yes and no buttons
+const yesNo = [yes,no];
 
 // Create an array 'RPS' containing strings: "rock","paper","scissors"
 // Updated: array to contain DOM nodes
@@ -157,18 +161,11 @@ function playGame() {
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
 function playAgain() {
 
-    while (!again)
     let again;
-    if (again) {
-        question.addEventListener()
-    }
+    playAgain.style.visibility = 'visible';
 
-//   -while again is not equal to either 'yes' or 'no'
-    while ((again === yes) && (again === no)) {
-//     -prompt user with same text prompt and update 'again' variable with the users input
-        again = prompt("Incorrect response. Do you want to play again? Type 'yes' or 'no'").toLowerCase();
-        console.log(`Again: ${again}`);
-    }
+    yesNo.forEach(elem => elem.addEventListener(elem => again = elem));
+    
 //   -if 'again' is equal to 'yes'
     if (again === yes) {
         rounds = 1;
