@@ -7,16 +7,38 @@ h1 {
     font-size: 60px;
     text-align: center;
     color: white;
-    text-shadow: 1px 1px 5px black;
+    text-shadow: 1px 1px 10px black;
 }
 
-#buttons {
+button {
+    font-size: 30px;
+    border: 2px solid black;
+}
+
+.buttons {
     display: flex;
     justify-content: center;
     flex: 1 1 auto;
     gap: 50px;
 }
 
-button {
-    font-size: 30px;
+.playAgain {
+    margin-top: 500px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.question {
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 1px 1px 10px black;
+}
+
+.yesNoButtons {
+    display: flex;
+    gap: 50px;
 }
