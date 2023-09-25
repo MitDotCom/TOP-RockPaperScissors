@@ -47,7 +47,7 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let playerChoice;
 
-    readOut.textContent = 'Please click your choice.'
+    readOut.textContent = 'Please click your choice.';
     RPS.forEach(elem => elem.addEventListener('click', function(e) {
         playerChoice = elem;
     }));
