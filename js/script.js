@@ -7,6 +7,7 @@
 
 
 // Creating DOM nodes for usage with Event Listener
+const score = document.querySelector('.score');
 const readOut = document.querySelector('.readOut');
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
@@ -19,7 +20,6 @@ const no = document.querySelector('.no');
 
 // Make playAgain invisible at the start of the page
 playAgain.style.visibility = 'hidden';
-question.style.visibility = 'inherit';
 
 // Create an array 'yesNo' for yes and no buttons
 const yesNo = [yes,no];
@@ -57,80 +57,62 @@ function calcWinner() {
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
+        score.textContent=`Round: ${rounds}`;
         readOut.textContent=`It's a tie. You both chose ${playerChoice}.`;
         rounds++;
-        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
     else if ((playerChoice === rock) && (computerChoice === paper)) {
 //   -print "Computer wins"
-        readOut.textContent="Computer wins. Paper beats rock.";
         rounds++;
         computerWins++;
+        score.textContent=`Computer wins: ${computerWins}, Player wins: ${playerWins}, Round: ${rounds}`;
         readOut.textContent="Computer wins. Paper beats rock.";
-        readOut.textContent=`Computer wins: ${computerWins}`;
-        readOut.textContent=`Player wins: ${playerWins}`;
-        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
     else if ((playerChoice === rock) && (computerChoice === scissors)) {
     //   -print "Player wins"
-        readOut.textContent="Player wins. Rock beats scissors.";
         rounds++;
         playerWins++;
+        score.textContent=`Computer wins: ${computerWins}, Player wins: ${playerWins}, Round: ${rounds}`;
         readOut.textContent="Player wins. Rock beats scissors.";
-        readOut.textContent=`Computer wins: ${computerWins}`;
-        readOut.textContent=`Player wins: ${playerWins}`;
-        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === paper) && (computerChoice === rock)) {
     //   -print "Player wins"
-        readOut.textContent="Player wins. Paper beats rock.";
         rounds++;
         playerWins++;
+        score.textContent=`Computer wins: ${computerWins}, Player wins: ${playerWins}, Round: ${rounds}`;
         readOut.textContent="Player wins. Paper beats rock.";
-        readOut.textContent=`Computer wins: ${computerWins}`;
-        readOut.textContent=`Player wins: ${playerWins}`;
-        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === paper) && (computerChoice === scissors)) {
 //   -print "Computer wins"
-        readOut.textContent="Computer wins. Scissors beats paper.";
         rounds++;
         computerWins++;
+        score.textContent=`Computer wins: ${computerWins}, Player wins: ${playerWins}, Round: ${rounds}`;
         readOut.textContent="Computer wins. Scissors beats paper.";
-        readOut.textContent=`Computer wins: ${computerWins}`;
-        readOut.textContent=`Player wins: ${playerWins}`;
-        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === scissors) && (computerChoice === rock)) {
 //   -print "Computer wins"
-        readOut.textContent="Computer wins. Rock beats scissors.";
         rounds++;
         computerWins++;
-        readOut.textContent="Computer wins. Rock beats scissors.";
-        readOut.textContent=`Computer wins: ${computerWins}`;
-        readOut.textContent=`Player wins: ${playerWins}`;
-        readOut.textContent=`Round: ${rounds}`;
+        score.textContent=`Computer wins: ${computerWins}, Player wins: ${playerWins}, Round: ${rounds}`;
+        readOut.textContent="Computer wins. Scissors beats paper.";
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === scissors) && (computerChoice === paper)) {
 //   -print "Player wins"
-        readOut.textContent="Player wins. Scissors beats paper.";
         rounds++;
         playerWins++;
+        score.textContent=`Computer wins: ${computerWins}, Player wins: ${playerWins}, Round: ${rounds}`;
         readOut.textContent="Player wins. Scissors beats paper.";
-        readOut.textContent=`Computer wins: ${computerWins}`;
-        readOut.textContent=`Player wins: ${playerWins}`;
-        readOut.textContent=`Round: ${rounds}`;
     }
     else {
         readOut.textContent="Error. calWinner() function is not working.";
-        readOut.textContent=`playerChoice = ${playerChoice}`;
-        readOut.textContent=`computerChoice = ${computerChoice}`;
+        console.log(`playerChoice = ${playerChoice}`);
+        console.log(`computerChoice = ${computerChoice}`);
     }
     return [
         computerWins,
