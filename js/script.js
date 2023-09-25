@@ -1,9 +1,9 @@
 //Pseudocode//
 
 // POTENTIAL IMPROVEMENT/FIX
-// Change console.log() calls at the end of conditional blocks in the calcWinner() function
-//  to a function that calculates and console.logs all the 'final statements'
-// Add console.log function to each end of round because it's hard to see the results in the console with the console.log popup open
+// Change readOut.textContent() calls at the end of conditional blocks in the calcWinner() function
+//  to a function that calculates and readOut.textContents all the 'final statements'
+// Add readOut.textContent function to each end of round because it's hard to see the results in the console with the readOut.textContent popup open
 
 
 // Creating DOM nodes for usage with Event Listener
@@ -19,6 +19,7 @@ const no = document.querySelector('.no');
 
 // Make playAgain invisible at the start of the page
 playAgain.style.visibility = 'hidden';
+question.style.visibility = 'inherit';
 
 // Create an array 'yesNo' for yes and no buttons
 const yesNo = [yes,no];
@@ -44,7 +45,6 @@ function getComputerChoice() {
 // Define a function getPlayerChoice() that creates a variable playerChoice with initial input value from prompt function reading: "Enter either: 'rock', 'paper', or 'scissors'"
 // -I also added the toLowerCase method to make the user value 'case insensitive'
 function getPlayerChoice() {
-    console.log(`Round: ${rounds}!`);
     let playerChoice;
 
     RPS.forEach(elem => elem.addEventListener('click', elem => playerChoice = elem));
@@ -57,88 +57,80 @@ function calcWinner() {
 // if computerChoice is equal to playerChoice
     if (computerChoice === playerChoice) {
 //   -print "It's a tie"
-        console.log(`It's a tie. You both chose ${playerChoice}.`);
-        console.log(`It's a tie. You both chose ${playerChoice}.`);
+        readOut.textContent=`It's a tie. You both chose ${playerChoice}.`;
         rounds++;
-        console.log(`Round: ${rounds}`);
-        console.log(".....................");
+        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'paper'
     else if ((playerChoice === rock) && (computerChoice === paper)) {
 //   -print "Computer wins"
-        console.log("Computer wins. Paper beats rock.");
+        readOut.textContent="Computer wins. Paper beats rock.";
         rounds++;
         computerWins++;
-        console.log("Computer wins. Paper beats rock.");
-        console.log(`Computer wins: ${computerWins}`);
-        console.log(`Player wins: ${playerWins}`);
-        console.log(`Round: ${rounds}`);
-        console.log(".....................");
+        readOut.textContent="Computer wins. Paper beats rock.";
+        readOut.textContent=`Computer wins: ${computerWins}`;
+        readOut.textContent=`Player wins: ${playerWins}`;
+        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'rock' and computerChoice is equal to 'scissors'
     else if ((playerChoice === rock) && (computerChoice === scissors)) {
     //   -print "Player wins"
-        console.log("Player wins. Rock beats scissors.");
+        readOut.textContent="Player wins. Rock beats scissors.";
         rounds++;
         playerWins++;
-        console.log("Player wins. Rock beats scissors.");
-        console.log(`Computer wins: ${computerWins}`);
-        console.log(`Player wins: ${playerWins}`);
-        console.log(`Round: ${rounds}`);
-        console.log(".....................");
+        readOut.textContent="Player wins. Rock beats scissors.";
+        readOut.textContent=`Computer wins: ${computerWins}`;
+        readOut.textContent=`Player wins: ${playerWins}`;
+        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'rock'
     else if ((playerChoice === paper) && (computerChoice === rock)) {
     //   -print "Player wins"
-        console.log("Player wins. Paper beats rock.");
+        readOut.textContent="Player wins. Paper beats rock.";
         rounds++;
         playerWins++;
-        console.log("Player wins. Paper beats rock.");
-        console.log(`Computer wins: ${computerWins}`);
-        console.log(`Player wins: ${playerWins}`);
-        console.log(`Round: ${rounds}`);
-        console.log(".....................");
+        readOut.textContent="Player wins. Paper beats rock.";
+        readOut.textContent=`Computer wins: ${computerWins}`;
+        readOut.textContent=`Player wins: ${playerWins}`;
+        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'paper' and computerChoice is equal to 'scissors'
     else if ((playerChoice === paper) && (computerChoice === scissors)) {
 //   -print "Computer wins"
-        console.log("Computer wins. Scissors beats paper.");
+        readOut.textContent="Computer wins. Scissors beats paper.";
         rounds++;
         computerWins++;
-        console.log("Computer wins. Scissors beats paper.");
-        console.log(`Computer wins: ${computerWins}`);
-        console.log(`Player wins: ${playerWins}`);
-        console.log(`Round: ${rounds}`);
-        console.log(".....................");
+        readOut.textContent="Computer wins. Scissors beats paper.";
+        readOut.textContent=`Computer wins: ${computerWins}`;
+        readOut.textContent=`Player wins: ${playerWins}`;
+        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'rock'
     else if ((playerChoice === scissors) && (computerChoice === rock)) {
 //   -print "Computer wins"
-        console.log("Computer wins. Rock beats scissors.");
+        readOut.textContent="Computer wins. Rock beats scissors.";
         rounds++;
         computerWins++;
-        console.log("Computer wins. Rock beats scissors.");
-        console.log(`Computer wins: ${computerWins}`);
-        console.log(`Player wins: ${playerWins}`);
-        console.log(`Round: ${rounds}`);
-        console.log(".....................");
+        readOut.textContent="Computer wins. Rock beats scissors.";
+        readOut.textContent=`Computer wins: ${computerWins}`;
+        readOut.textContent=`Player wins: ${playerWins}`;
+        readOut.textContent=`Round: ${rounds}`;
     }
 // else if playerChoice is equal to 'scissors' and computerChoice is equal to 'paper'
     else if ((playerChoice === scissors) && (computerChoice === paper)) {
 //   -print "Player wins"
-        console.log("Player wins. Scissors beats paper.");
+        readOut.textContent="Player wins. Scissors beats paper.";
         rounds++;
         playerWins++;
-        console.log("Player wins. Scissors beats paper.");
-        console.log(`Computer wins: ${computerWins}`);
-        console.log(`Player wins: ${playerWins}`);
-        console.log(`Round: ${rounds}`);
-        console.log(".....................");
+        readOut.textContent="Player wins. Scissors beats paper.";
+        readOut.textContent=`Computer wins: ${computerWins}`;
+        readOut.textContent=`Player wins: ${playerWins}`;
+        readOut.textContent=`Round: ${rounds}`;
     }
     else {
-        console.log("Error");
-        console.log(`playerChoice = ${playerChoice}`);
-        console.log(`computerChoice = ${computerChoice}`);
+        readOut.textContent="Error. calWinner() function is not working.";
+        readOut.textContent=`playerChoice = ${playerChoice}`;
+        readOut.textContent=`computerChoice = ${computerChoice}`;
     }
     return [
         computerWins,
@@ -159,12 +151,12 @@ function playGame() {
 }
 
 // Define a function playAgain() that creates a variable 'again' with an initial input value from prompt function reading: "Do you want to play again? Enter: 'y' or 'n'"
-function playAgain() {
+function playGameAgain() {
 
     let again;
     playAgain.style.visibility = 'visible';
 
-    yesNo.forEach(elem => elem.addEventListener(elem => again = elem));
+    yesNo.forEach(elem => elem.addEventListener('click',elem => again = elem));
     
 //   -if 'again' is equal to 'yes'
     if (again === yes) {
@@ -172,13 +164,13 @@ function playAgain() {
         playGame();
     }
 //   -else if 'again' is equal to 'no'
+    //-print "Thanks for playing"
     else if (again === no) {
-        console.log("Thanks for playing.");
+        readOut.textContent="Thanks for playing.";
     }
 //   else
     else {
-//     -print "Thanks for playing"
-        console.log("Error");
+        readOut.textContent="Error. playGameAgain() function is not working.";
     }
     return [
         again,
@@ -190,4 +182,4 @@ function playAgain() {
 playGame();
 
 //Call playAgain() function
-[again,rounds] = playAgain();
+[again,rounds] = playGameAgain();
