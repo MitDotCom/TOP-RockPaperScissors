@@ -7,6 +7,12 @@ body {
 
 button {
     font-size: 30px;
+    border: 2px solid black;
+}
+
+.growShrink {
+    transform: scale(1,1);
+    box-shadow: 0 0 1rem black;
 }
 
 h1 {
