@@ -2,117 +2,121 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const playAgain = document.querySelector(".playAgain");
+const score = document.querySelector(".score");
+const readOut = document.querySelector(".readOut");
+const yes = document.querySelector(".yes");
+const no = document.querySelector(".no");
 
 let RPS = [rock, paper, scissors];
 let rounds = 1;
 let playerChoice;
 let computerWins = 0;
 let playerWins = 0;
+let again;
 
 function getComputerChoice() {
   let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
   return computerChoice;
 }
 
-function playRound(playerChoice) {
-  computerChoice = getComputerChoice();
-}
-
-function main() {
+function playRound() {
   rock.addEventListener("click", function () {
-    playerChoice = rock.textContent;
-    playRound(playerChoice);
+    playerChoice = rock.textContent.toLowerCase();
+    computerChoice = getComputerChoice();
+    [computerWins, playerWins] = calcWinner();
+    console.log(
+      `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
+    );
   });
 
   paper.addEventListener("click", function () {
-    playerChoice = paper.textContent;
-    playRound(playerChoice);
+    playerChoice = paper.textContent.toLowerCase();
+    computerChoice = getComputerChoice();
+    [computerWins, playerWins] = calcWinner();
+    console.log(
+      `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
+    );
   });
 
   scissors.addEventListener("click", function () {
-    playerChoice = scissors.textContent;
-    playRound(playerChoice);
+    playerChoice = scissors.textContent.toLowerCase();
+    computerChoice = getComputerChoice();
+    [computerWins, playerWins] = calcWinner();
+    console.log(
+      `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
+    );
   });
 }
 
 function calcWinner(computerChoice, playerChoice) {
   if (computerChoice === playerChoice) {
-    console.log(`It's a tie. You both chose ${playerChoice}.`);
-    console.log(`It's a tie. You both chose ${playerChoice}.`);
+    readOut.textContent = `It's a tie. You both chose ${playerChoice}.`;
     rounds++;
-    console.log(`Round: ${rounds}`);
+    score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
   } else if (playerChoice === "rock" && computerChoice === "paper") {
-    console.log("Computer wins. Paper beats rock.");
+    readOut.textContent = "Computer wins. Paper beats rock.";
     rounds++;
     computerWins++;
-    console.log(`Computer wins: ${computerWins}`);
-    console.log(`Player wins: ${playerWins}`);
-    console.log(`Round: ${rounds}`);
+    score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
   } else if (playerChoice === "rock" && computerChoice === "scissors") {
-    console.log("Player wins. Rock beats scissors.");
+    readOut.textContent = "Player wins. Rock beats scissors.";
     rounds++;
     playerWins++;
-    console.log(`Computer wins: ${computerWins}`);
-    console.log(`Player wins: ${playerWins}`);
-    console.log(`Round: ${rounds}`);
+    score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
   } else if (playerChoice === "paper" && computerChoice === "rock") {
-    console.log("Player wins. Paper beats rock.");
+    readOut.textContent = "Player wins. Paper beats rock.";
     rounds++;
     playerWins++;
-    console.log(`Computer wins: ${computerWins}`);
-    console.log(`Player wins: ${playerWins}`);
-    console.log(`Round: ${rounds}`);
+    score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
   } else if (playerChoice === "paper" && computerChoice === "scissors") {
-    console.log("Computer wins. Scissors beats paper.");
+    readOut.textContent = "Computer wins. Scissors beats paper.";
     rounds++;
     computerWins++;
-    console.log(`Computer wins: ${computerWins}`);
-    console.log(`Player wins: ${playerWins}`);
-    console.log(`Round: ${rounds}`);
+    score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
   } else if (playerChoice === "scissors" && computerChoice === "rock") {
-    console.log("Computer wins. Rock beats scissors.");
+    readOut.textContent = "Computer wins. Rock beats scissors.";
     rounds++;
     computerWins++;
-    console.log(`Computer wins: ${computerWins}`);
-    console.log(`Player wins: ${playerWins}`);
-    console.log(`Round: ${rounds}`);
+    score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
-    console.log("Player wins. Scissors beats paper.");
+    readOut.textContent = "Player wins. Scissors beats paper.";
     rounds++;
     playerWins++;
-    console.log(`Computer wins: ${computerWins}`);
-    console.log(`Player wins: ${playerWins}`);
-    console.log(`Round: ${rounds}`);
+    score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
   } else {
-    console.log("Error");
-    console.log(`playerChoice = ${playerChoice}`);
-    console.log(`computerChoice = ${computerChoice}`);
+    readOut.textContent = "Error";
+    readOut.textContent = `playerChoice = ${playerChoice}`;
+    readOut.textContent = `computerChoice = ${computerChoice}`;
   }
   return [computerWins, playerWins];
 }
 
-function playAgain() {
-  playAgain.style.visibility = "visible";
-  //   let again = prompt(
-  //     "Do you want to play again? Type 'yes' or 'no'"
-  //   ).toLowerCase();
-  while (again === "yes" && again === "no") {
-    again = prompt(
-      "Incorrect response. Do you want to play again? Type 'yes' or 'no'"
-    ).toLowerCase();
-    console.log(`Again: ${again}`);
-  }
-  if (again === "yes") {
-    rounds = 1;
-    playRound();
-  } else if (again === "no") {
-    console.log("Thanks for playing.");
-  } else {
-    console.log("Error");
-  }
-  return [again, rounds];
-}
+// function playGameAgain() {
+//   playAgain.style.visibility = "visible";
 
-playRound(playerChoice);
+//   yes.addEventListener("click", function () {
+//     again = yes.textContent;
+//   });
+//   no.addEventListener("click", function () {
+//     again = no.textContent;
+//   });
+//   while (again === "yes" && again === "no") {
+//     again = prompt(
+//       "Incorrect response. Do you want to play again? Type 'yes' or 'no'"
+//     ).toLowerCase();
+//     readOut.textContent = `Again: ${again}`;
+//   }
+//   if (again === "yes") {
+//     rounds = 1;
+//     playRound();
+//   } else if (again === "no") {
+//     readOut.textContent = "Thanks for playing.";
+//   } else {
+//     readOut.textContent = "Error";
+//   }
+//   return [again, rounds];
+// }
 
-[again, rounds] = playAgain();
+playRound();
+
+// [again, rounds] = playGameAgain();

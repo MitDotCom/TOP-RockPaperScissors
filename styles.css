@@ -55,6 +55,7 @@ h1 {
   flex-direction: column;
   justify-content: end;
   align-items: center;
+  visibility: hidden;
 }
 
 .question {
