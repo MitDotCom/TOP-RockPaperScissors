@@ -1,4 +1,8 @@
-const RPS = ["rock", "paper", "scissors"];
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+
+const RPS = [rock, paper, scissors];
 
 let rounds = 1;
 
@@ -94,11 +98,9 @@ function calcWinner() {
 }
 
 function playGame() {
-  for (let i = 0; i < 5; i++) {
-    computerChoice = getComputerChoice();
-    playerChoice = getPlayerChoice();
-    [computerWins, playerWins] = calcWinner();
-  }
+  computerChoice = getComputerChoice();
+  playerChoice = getPlayerChoice();
+  [computerWins, playerWins] = calcWinner();
 }
 
 function playAgain() {
