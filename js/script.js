@@ -6,37 +6,39 @@ const RPS = [rock, paper, scissors];
 
 let rounds = 1;
 
+let playerChoice;
 let computerWins = 0;
 let playerWins = 0;
+
+rock.addEventListener("click", function () {
+  playerChoice = rock.textContent;
+  playRound(playerChoice);
+});
+
+paper.addEventListener("click", function () {
+  playerChoice = paper.textContent;
+  playRound(playerChoice);
+});
+
+scissors.addEventListener("click", function () {
+  playerChoice = scissors.textContent;
+  playRound(playerChoice);
+});
 
 function getComputerChoice() {
   let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
   return computerChoice;
 }
 
-function getPlayerChoice() {
-  alert(`Round: ${rounds}!`);
-  let playerChoice = prompt(
-    "Please enter your choice: 'rock','paper', or 'scissors'."
-  ).toLowerCase();
-  while (!RPS.includes(playerChoice)) {
-    playerChoice = prompt(
-      "That is not a valid choice. Please enter your choice: 'rock','paper', or 'scissors'."
-    ).toLowerCase();
-    console.log(`You entered: ${playerChoice}`);
-  }
-  return playerChoice;
-}
-
-function calcWinner() {
+function calcWinner(computerChoice, playerChoice) {
   if (computerChoice === playerChoice) {
-    alert(`It's a tie. You both chose ${playerChoice}.`);
+    console.log(`It's a tie. You both chose ${playerChoice}.`);
     console.log(`It's a tie. You both chose ${playerChoice}.`);
     rounds++;
     console.log(`Round: ${rounds}`);
     console.log(".....................");
   } else if (playerChoice === "rock" && computerChoice === "paper") {
-    alert("Computer wins. Paper beats rock.");
+    console.log("Computer wins. Paper beats rock.");
     rounds++;
     computerWins++;
     console.log("Computer wins. Paper beats rock.");
@@ -45,7 +47,7 @@ function calcWinner() {
     console.log(`Round: ${rounds}`);
     console.log(".....................");
   } else if (playerChoice === "rock" && computerChoice === "scissors") {
-    alert("Player wins. Rock beats scissors.");
+    console.log("Player wins. Rock beats scissors.");
     rounds++;
     playerWins++;
     console.log("Player wins. Rock beats scissors.");
@@ -54,7 +56,7 @@ function calcWinner() {
     console.log(`Round: ${rounds}`);
     console.log(".....................");
   } else if (playerChoice === "paper" && computerChoice === "rock") {
-    alert("Player wins. Paper beats rock.");
+    console.log("Player wins. Paper beats rock.");
     rounds++;
     playerWins++;
     console.log("Player wins. Paper beats rock.");
@@ -63,7 +65,7 @@ function calcWinner() {
     console.log(`Round: ${rounds}`);
     console.log(".....................");
   } else if (playerChoice === "paper" && computerChoice === "scissors") {
-    alert("Computer wins. Scissors beats paper.");
+    console.log("Computer wins. Scissors beats paper.");
     rounds++;
     computerWins++;
     console.log("Computer wins. Scissors beats paper.");
@@ -72,7 +74,7 @@ function calcWinner() {
     console.log(`Round: ${rounds}`);
     console.log(".....................");
   } else if (playerChoice === "scissors" && computerChoice === "rock") {
-    alert("Computer wins. Rock beats scissors.");
+    console.log("Computer wins. Rock beats scissors.");
     rounds++;
     computerWins++;
     console.log("Computer wins. Rock beats scissors.");
@@ -81,7 +83,7 @@ function calcWinner() {
     console.log(`Round: ${rounds}`);
     console.log(".....................");
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
-    alert("Player wins. Scissors beats paper.");
+    console.log("Player wins. Scissors beats paper.");
     rounds++;
     playerWins++;
     console.log("Player wins. Scissors beats paper.");
@@ -97,10 +99,10 @@ function calcWinner() {
   return [computerWins, playerWins];
 }
 
-function playGame() {
+function playRound(playerChoice) {
   computerChoice = getComputerChoice();
-  playerChoice = getPlayerChoice();
   [computerWins, playerWins] = calcWinner();
+  return [computerWins, playerWins];
 }
 
 function playAgain() {
@@ -115,7 +117,7 @@ function playAgain() {
   }
   if (again === "yes") {
     rounds = 1;
-    playGame();
+    playRound();
   } else if (again === "no") {
     console.log("Thanks for playing.");
   } else {
@@ -124,6 +126,6 @@ function playAgain() {
   return [again, rounds];
 }
 
-playGame();
+playRound();
 
 [again, rounds] = playAgain();
