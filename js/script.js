@@ -7,7 +7,7 @@ const readOut = document.querySelector(".readOut");
 const yes = document.querySelector(".yes");
 const no = document.querySelector(".no");
 
-let RPS = [rock, paper, scissors];
+let RPS = ["rock", "paper", "scissors"];
 let rounds = 1;
 let playerChoice;
 let computerWins = 0;
@@ -21,27 +21,27 @@ function getComputerChoice() {
 
 function playRound() {
   rock.addEventListener("click", function () {
+    let computerChoice = getComputerChoice();
     playerChoice = rock.textContent.toLowerCase();
-    computerChoice = getComputerChoice();
-    [computerWins, playerWins] = calcWinner();
+    [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
     );
   });
 
   paper.addEventListener("click", function () {
+    let computerChoice = getComputerChoice();
     playerChoice = paper.textContent.toLowerCase();
-    computerChoice = getComputerChoice();
-    [computerWins, playerWins] = calcWinner();
+    [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
     );
   });
 
   scissors.addEventListener("click", function () {
+    let computerChoice = getComputerChoice();
     playerChoice = scissors.textContent.toLowerCase();
-    computerChoice = getComputerChoice();
-    [computerWins, playerWins] = calcWinner();
+    [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
     );
