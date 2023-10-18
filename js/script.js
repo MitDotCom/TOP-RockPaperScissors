@@ -20,6 +20,7 @@ function getComputerChoice() {
 }
 
 function playRound() {
+  playAgain.style.visibility = "hidden";
   rock.addEventListener("click", function () {
     let computerChoice = getComputerChoice();
     playerChoice = rock.textContent.toLowerCase();
@@ -27,6 +28,9 @@ function playRound() {
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
     );
+    if (rounds === 5) {
+      [again, rounds] = playGameAgain();
+    }
   });
 
   paper.addEventListener("click", function () {
@@ -36,6 +40,9 @@ function playRound() {
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
     );
+    if (rounds === 5) {
+      [again, rounds] = playGameAgain();
+    }
   });
 
   scissors.addEventListener("click", function () {
@@ -45,6 +52,9 @@ function playRound() {
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
     );
+    if (rounds === 5) {
+      [again, rounds] = playGameAgain();
+    }
   });
 }
 
@@ -84,39 +94,44 @@ function calcWinner(computerChoice, playerChoice) {
     playerWins++;
     score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
   } else {
-    readOut.textContent = "Error";
+    readOut.textContent = "calcWinner() Error";
     readOut.textContent = `playerChoice = ${playerChoice}`;
     readOut.textContent = `computerChoice = ${computerChoice}`;
   }
   return [computerWins, playerWins];
 }
 
-// function playGameAgain() {
-//   playAgain.style.visibility = "visible";
+function playGameAgain() {
+  playAgain.style.visibility = "visible";
 
-//   yes.addEventListener("click", function () {
-//     again = yes.textContent;
-//   });
-//   no.addEventListener("click", function () {
-//     again = no.textContent;
-//   });
-//   while (again === "yes" && again === "no") {
-//     again = prompt(
-//       "Incorrect response. Do you want to play again? Type 'yes' or 'no'"
-//     ).toLowerCase();
-//     readOut.textContent = `Again: ${again}`;
-//   }
-//   if (again === "yes") {
-//     rounds = 1;
-//     playRound();
-//   } else if (again === "no") {
-//     readOut.textContent = "Thanks for playing.";
-//   } else {
-//     readOut.textContent = "Error";
-//   }
-//   return [again, rounds];
-// }
+  yes.addEventListener("click", function () {
+    again = yes.textContent.toLowerCase();
+    if (again === "yes") {
+      rounds = 1;
+      playerWins = 0;
+      computerWins = 0;
+      readOut.textContent = "";
+      score.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
+      playRound();
+    } else if (again === "no") {
+      readOut.textContent = "Thanks for playing.";
+    } else {
+      readOut.textContent = "playGameAgain() Error";
+    }
+  });
+  no.addEventListener("click", function () {
+    again = no.textContent.toLowerCase();
+    if (again === "yes") {
+      rounds = 1;
+      playRound();
+    } else if (again === "no") {
+      readOut.textContent = "Thanks for playing.";
+    } else {
+      readOut.textContent = "playGameAgain() Error";
+    }
+  });
+
+  return [again, rounds];
+}
 
 playRound();
-
-// [again, rounds] = playGameAgain();
