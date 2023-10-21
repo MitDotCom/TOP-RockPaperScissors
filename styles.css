@@ -5,22 +5,16 @@ body {
   margin: 50px;
 }
 
-button {
-  font-size: 30px;
-  /* border: 2px solid black; */
-}
-
-/* .growShrink {
-    transform: scale(1, 1);
-    box-shadow: 0 0 1rem black;
-} */
-
 h1 {
   font-size: 60px;
   text-align: center;
   color: black;
   text-shadow: 1px 1px 20px white;
-  background-color: ;
+  background-color: white;
+}
+
+button {
+  font-size: 30px;
 }
 
 .score {
