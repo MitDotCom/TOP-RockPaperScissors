@@ -20,7 +20,9 @@ function getComputerChoice() {
 }
 
 function playRound() {
+  
   playAgain.style.visibility = "hidden";
+
   rock.addEventListener("click", function () {
     let computerChoice = getComputerChoice();
     playerChoice = "rock";
