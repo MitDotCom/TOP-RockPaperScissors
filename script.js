@@ -9,7 +9,7 @@ const yes = document.querySelector(".yes");
 const no = document.querySelector(".no");
 
 let RPS = ["rock", "paper", "scissors"];
-let rounds = 1;
+let rounds = 0;
 let playerChoice;
 let computerWins = 0;
 let playerWins = 0;
@@ -30,6 +30,9 @@ function playRound() {
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     if (rounds === 5) {
       [again, rounds] = playGameAgain();
+      rock.style.visibility = "hidden";
+      paper.style.visibility = "hidden";
+      scissors.style.visibility = "hidden";
     }
   });
 
@@ -39,6 +42,9 @@ function playRound() {
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     if (rounds === 5) {
       [again, rounds] = playGameAgain();
+      rock.style.visibility = "hidden";
+      paper.style.visibility = "hidden";
+      scissors.style.visibility = "hidden";
     }
   });
 
@@ -48,6 +54,9 @@ function playRound() {
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     if (rounds === 5) {
       [again, rounds] = playGameAgain();
+      rock.style.visibility = "hidden";
+      paper.style.visibility = "hidden";
+      scissors.style.visibility = "hidden";
     }
   });
 }
@@ -106,7 +115,7 @@ function playGameAgain() {
   yes.addEventListener("click", function () {
     again = yes.textContent.toLowerCase();
     if (again === "yes") {
-      rounds = 1;
+      rounds = 0;
       playerWins = 0;
       computerWins = 0;
       readOut.textContent = "";
@@ -121,7 +130,7 @@ function playGameAgain() {
   no.addEventListener("click", function () {
     again = no.textContent.toLowerCase();
     if (again === "yes") {
-      rounds = 1;
+      rounds = 0;
       playRound();
     } else if (again === "no") {
       readOut.textContent = "Thanks for playing.";
