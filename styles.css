@@ -3,6 +3,10 @@
   src: url(./fonts/JFRocOut.ttf);
 }
 
+@font-face {
+  font-family: KubosOrigami-YdXq;
+  src: url(./fonts/KubosOrigami-YdXq.ttf);
+}
 body {
   display: flex;
   flex-direction: column;
@@ -25,7 +29,7 @@ body {
 }
 
 .paper {
-
+  font-family: KubosOrigami-YdXq;
 }
 
 .scissors {
