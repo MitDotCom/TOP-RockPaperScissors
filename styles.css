@@ -1,3 +1,8 @@
+@font-face {
+  font-family: JFRocOut;
+  src: url(./fonts/JFRocOut.ttf);
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -13,6 +18,18 @@ body {
   flex: auto;
   justify-content: center;
   background-color: white;
+}
+
+.rock {
+  font-family: JFRocOut;
+}
+
+.paper {
+
+}
+
+.scissors {
+
 }
 
 h1 {
