@@ -2,7 +2,8 @@ const rock = document.querySelector(".rockbtn");
 const paper = document.querySelector(".paperbtn");
 const scissors = document.querySelector(".scissorsbtn");
 const playAgain = document.querySelector(".playAgain");
-const scores = document.querySelector(".scoress");
+const playerScoreSpan = document.querySelector(".playerScoreSpan");
+const computerScoreSpan = document.querySelector(".computerScoreSpan");
 const readOut = document.querySelector(".readOut");
 const yes = document.querySelector(".yes");
 const no = document.querySelector(".no");
@@ -55,37 +56,44 @@ function calcWinner(computerChoice, playerChoice) {
   if (computerChoice === playerChoice) {
     readOut.textContent = `It's a tie. You both chose ${playerChoice}.`;
     rounds++;
-    scores.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
+    playerScoreSpan.textContent = `${playerWins}`;
+    computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "rock" && computerChoice === "paper") {
     readOut.textContent = "Computer wins. Paper beats rock.";
     rounds++;
     computerWins++;
-    scores.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
+    playerScoreSpan.textContent = `${playerWins}`;
+    computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "rock" && computerChoice === "scissors") {
     readOut.textContent = "Player wins. Rock beats scissors.";
     rounds++;
     playerWins++;
-    scores.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
+    playerScoreSpan.textContent = `${playerWins}`;
+    computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "paper" && computerChoice === "rock") {
     readOut.textContent = "Player wins. Paper beats rock.";
     rounds++;
     playerWins++;
-    scores.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
+    playerScoreSpan.textContent = `${playerWins}`;
+    computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "paper" && computerChoice === "scissors") {
     readOut.textContent = "Computer wins. Scissors beats paper.";
     rounds++;
     computerWins++;
-    scores.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
+    playerScoreSpan.textContent = `${playerWins}`;
+    computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "scissors" && computerChoice === "rock") {
     readOut.textContent = "Computer wins. Rock beats scissors.";
     rounds++;
     computerWins++;
-    scores.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
+    playerScoreSpan.textContent = `${playerWins}`;
+    computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
     readOut.textContent = "Player wins. Scissors beats paper.";
     rounds++;
     playerWins++;
-    scores.textContent = `Computer wins: ${computerWins} Player wins: ${playerWins} Round: ${rounds}`;
+    playerScoreSpan.textContent = `${playerWins}`;
+    computerScoreSpan.textContent = `${computerWins}`;
   } else {
     readOut.textContent = "calcWinner() Error";
   }
