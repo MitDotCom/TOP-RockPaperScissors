@@ -23,7 +23,7 @@ function playRound() {
   playAgain.style.visibility = "hidden";
   rock.addEventListener("click", function () {
     let computerChoice = getComputerChoice();
-    playerChoice = rock.textContent.toLowerCase();
+    playerChoice = "rock";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
@@ -35,7 +35,7 @@ function playRound() {
 
   paper.addEventListener("click", function () {
     let computerChoice = getComputerChoice();
-    playerChoice = paper.textContent.toLowerCase();
+    playerChoice = "paper";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
@@ -47,7 +47,7 @@ function playRound() {
 
   scissors.addEventListener("click", function () {
     let computerChoice = getComputerChoice();
-    playerChoice = scissors.textContent.toLowerCase();
+    playerChoice = "scissors"
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(
       `Player Choice: ${playerChoice}, Computer Choice: ${computerChoice}`
