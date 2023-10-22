@@ -78,7 +78,6 @@ h1 {
   width: 130px;
   height: 130px;
   background-color: white;
-  background-color: white;
   border: 2px solid black;
   border-radius: 10px;
 }
@@ -97,7 +96,6 @@ h1 {
   width: 130px;
   height: 130px;
   background-color: white;
-  background-color: white;
   border: 2px solid black;
   border-radius: 10px;
 }
@@ -111,10 +109,14 @@ h1 {
 .readOut {
   display: flex;
   justify-content: center;
-  font-size: 30px;
-  color: black;
-  text-shadow: 1px 1px 20px white;
+  padding: 10px;
   margin: 50px;
+  font-size: 30px;
+  text-shadow: 1px 1px 20px white;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .buttons {
