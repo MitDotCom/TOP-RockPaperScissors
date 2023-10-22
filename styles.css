@@ -23,7 +23,7 @@ body {
 }
 
 .title {
-  padding: 0px 40px;
+  padding: 0 20px;
   display: flex;
   flex: auto;
   justify-content: center;
@@ -37,6 +37,7 @@ h1 .rock {
 
 h1 .paper {
   font-family: KubosOrigami-YdXq;
+  font-size: 70px;
 }
 
 h1 .scissors {
