@@ -8,6 +8,13 @@ const readOut = document.querySelector(".readOut");
 const yes = document.querySelector(".yes");
 const no = document.querySelector(".no");
 
+const rockSound = new Audio("./sounds/rock.mp3");
+rockSound.volume = 0.2;
+const paperSound = new Audio("./sounds/paper.mp3");
+paperSound.volume = 0.3;
+const scissorsSound = new Audio("./sounds/scissors.mp3");
+scissorsSound.volume = 0.3;
+
 const RPS = ["rock", "paper", "scissors"];
 
 let rounds = 0;
@@ -33,6 +40,11 @@ function playRound() {
 
   rock.addEventListener("click", function (e) {
     e.stopImmediatePropagation();
+    rockSound.load();
+    rockSound.play();
+    setTimeout(() => {
+      rockSound.pause();
+    },1000);
     let computerChoice = getComputerChoice();
     playerChoice = "rock";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
@@ -47,6 +59,11 @@ function playRound() {
 
   paper.addEventListener("click", function (e) {
     e.stopImmediatePropagation();
+    paperSound.load();
+    paperSound.play();
+    setTimeout(() => {
+      paperSound.pause();
+    },1000);
     let computerChoice = getComputerChoice();
     playerChoice = "paper";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
@@ -61,6 +78,11 @@ function playRound() {
 
   scissors.addEventListener("click", function (e) {
     e.stopImmediatePropagation();
+    scissorsSound.load();
+    scissorsSound.play();
+    setTimeout(() => {
+      scissorsSound.pause();
+    },1000);
     let computerChoice = getComputerChoice();
     playerChoice = "scissors";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
@@ -72,7 +94,7 @@ function playRound() {
       scissors.style.visibility = "hidden";
     }
   });
-}
+};
 
 function calcWinner(computerChoice, playerChoice) {
   if (computerChoice === playerChoice) {
