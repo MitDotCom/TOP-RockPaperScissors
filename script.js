@@ -32,11 +32,12 @@ function playRound() {
   playAgain.style.visibility = "hidden";
 
   rock.addEventListener("click", function (e) {
+    e.stopImmediatePropagation();
     let computerChoice = getComputerChoice();
     playerChoice = "rock";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(rounds);
-    if ((rounds >= 5 && playerWins > computerWins) || (rounds === 5 && playerWins < computerWins)) {
+    if ((rounds >= 5 && playerWins > computerWins) || (rounds >= 5 && playerWins < computerWins)) {
       playGameAgain();
       rock.style.visibility = "hidden";
       paper.style.visibility = "hidden";
@@ -45,11 +46,12 @@ function playRound() {
   });
 
   paper.addEventListener("click", function (e) {
+    e.stopImmediatePropagation();
     let computerChoice = getComputerChoice();
     playerChoice = "paper";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(rounds);
-    if ((rounds >= 5 && playerWins > computerWins) || (rounds === 5 && playerWins < computerWins)) {
+    if ((rounds >= 5 && playerWins > computerWins) || (rounds >= 5 && playerWins < computerWins)) {
       playGameAgain();
       rock.style.visibility = "hidden";
       paper.style.visibility = "hidden";
@@ -58,11 +60,12 @@ function playRound() {
   });
 
   scissors.addEventListener("click", function (e) {
+    e.stopImmediatePropagation();
     let computerChoice = getComputerChoice();
     playerChoice = "scissors";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
     console.log(rounds);
-    if ((rounds >= 5 && playerWins > computerWins) || (rounds === 5 && playerWins < computerWins)) {
+    if ((rounds >= 5 && playerWins > computerWins) || (rounds >= 5 && playerWins < computerWins)) {
       playGameAgain();
       rock.style.visibility = "hidden";
       paper.style.visibility = "hidden";
