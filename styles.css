@@ -150,7 +150,7 @@ h1 .scissors {
 .yesNoButtons {
   display: flex;
   gap: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .yes,.no {

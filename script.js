@@ -8,11 +8,19 @@ const readOut = document.querySelector(".readOut");
 const yes = document.querySelector(".yes");
 const no = document.querySelector(".no");
 
-let RPS = ["rock", "paper", "scissors"];
+const RPS = ["rock", "paper", "scissors"];
+
 let rounds = 0;
 let playerChoice;
 let computerWins = 0;
 let playerWins = 0;
+
+function resetGame() {
+  rounds = 0;
+  playerChoice = "";
+  computerWins = 0;
+  playerWins = 0;
+}
 
 function getComputerChoice() {
   let computerChoice = RPS[Math.floor(Math.random() * RPS.length)];
@@ -23,36 +31,39 @@ function playRound() {
 
   playAgain.style.visibility = "hidden";
 
-  rock.addEventListener("click", function () {
+  rock.addEventListener("click", function (e) {
     let computerChoice = getComputerChoice();
     playerChoice = "rock";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
+    console.log(rounds);
     if ((rounds >= 5 && playerWins > computerWins) || (rounds === 5 && playerWins < computerWins)) {
-      [again, rounds] = playGameAgain();
+      playGameAgain();
       rock.style.visibility = "hidden";
       paper.style.visibility = "hidden";
       scissors.style.visibility = "hidden";
     }
   });
 
-  paper.addEventListener("click", function () {
+  paper.addEventListener("click", function (e) {
     let computerChoice = getComputerChoice();
     playerChoice = "paper";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
+    console.log(rounds);
     if ((rounds >= 5 && playerWins > computerWins) || (rounds === 5 && playerWins < computerWins)) {
-      [again, rounds] = playGameAgain();
+      playGameAgain();
       rock.style.visibility = "hidden";
       paper.style.visibility = "hidden";
       scissors.style.visibility = "hidden";
     }
   });
 
-  scissors.addEventListener("click", function () {
+  scissors.addEventListener("click", function (e) {
     let computerChoice = getComputerChoice();
     playerChoice = "scissors";
     [computerWins, playerWins] = calcWinner(computerChoice, playerChoice);
+    console.log(rounds);
     if ((rounds >= 5 && playerWins > computerWins) || (rounds === 5 && playerWins < computerWins)) {
-      [again, rounds] = playGameAgain();
+      playGameAgain();
       rock.style.visibility = "hidden";
       paper.style.visibility = "hidden";
       scissors.style.visibility = "hidden";
@@ -62,44 +73,44 @@ function playRound() {
 
 function calcWinner(computerChoice, playerChoice) {
   if (computerChoice === playerChoice) {
+    rounds += 1;
     readOut.textContent = `It's a tie. You both chose ${playerChoice}.`;
-    rounds++;
     playerScoreSpan.textContent = `${playerWins}`;
     computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "rock" && computerChoice === "paper") {
+    rounds += 1;
     readOut.textContent = "Computer wins. Paper beats rock.";
-    rounds++;
-    computerWins++;
+    computerWins += 1;
     playerScoreSpan.textContent = `${playerWins}`;
     computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "rock" && computerChoice === "scissors") {
+    rounds += 1;
     readOut.textContent = "Player wins. Rock beats scissors.";
-    rounds++;
-    playerWins++;
+    playerWins += 1;
     playerScoreSpan.textContent = `${playerWins}`;
     computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "paper" && computerChoice === "rock") {
+    rounds += 1;
     readOut.textContent = "Player wins. Paper beats rock.";
-    rounds++;
-    playerWins++;
+    playerWins += 1;
     playerScoreSpan.textContent = `${playerWins}`;
     computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "paper" && computerChoice === "scissors") {
+    rounds += 1;
     readOut.textContent = "Computer wins. Scissors beats paper.";
-    rounds++;
-    computerWins++;
+    computerWins += 1;
     playerScoreSpan.textContent = `${playerWins}`;
     computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "scissors" && computerChoice === "rock") {
+    rounds += 1;
     readOut.textContent = "Computer wins. Rock beats scissors.";
-    rounds++;
-    computerWins++;
+    computerWins += 1;
     playerScoreSpan.textContent = `${playerWins}`;
     computerScoreSpan.textContent = `${computerWins}`;
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
+    rounds += 1;
     readOut.textContent = "Player wins. Scissors beats paper.";
-    rounds++;
-    playerWins++;
+    playerWins += 1;
     playerScoreSpan.textContent = `${playerWins}`;
     computerScoreSpan.textContent = `${computerWins}`;
   } else {
@@ -110,26 +121,26 @@ function calcWinner(computerChoice, playerChoice) {
 }
 
 function playGameAgain() {
+
   playAgain.style.visibility = "visible";
 
   yes.addEventListener("click", function () {
-      rounds = 0;
-      playerWins = 0;
-      computerWins = 0;
-      readOut.textContent = "Ready?";
-      playerScoreSpan.textContent = `${playerWins}`;
-      computerScoreSpan.textContent = `${computerWins}`;
-      rock.style.visibility = "visible";
-      paper.style.visibility = "visible";
-      scissors.style.visibility = "visible";
-      playRound();
+    resetGame();
+    readOut.textContent = "Ready?";
+    playerScoreSpan.textContent = `${playerWins}`;
+    computerScoreSpan.textContent = `${computerWins}`;
+    rock.style.visibility = "visible";
+    paper.style.visibility = "visible";
+    scissors.style.visibility = "visible";
+    playRound();
   });
 
   no.addEventListener("click", function () {
     readOut.textContent = "Thanks for playing.";
+    rock.style.visibility = "hidden";
+    paper.style.visibility = "hidden";
+    scissors.style.visibility = "hidden";
   });
-
-  return [again, rounds];
-}
+};
 
 playRound();
